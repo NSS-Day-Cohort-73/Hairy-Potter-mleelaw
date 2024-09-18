@@ -11,3 +11,4 @@ export const makePottery = (shape,weight,height) => {
     primaryKey++;
     return pottery
 }
+
