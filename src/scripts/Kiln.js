@@ -8,3 +8,4 @@ export const firePottery = (object, temperature) => {
 
     return object;
 };
+
