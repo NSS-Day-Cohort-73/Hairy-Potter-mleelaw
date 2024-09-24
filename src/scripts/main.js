@@ -2,6 +2,7 @@
 import { makePottery } from "./PotteryWheel.js"
 import { firePottery } from "./Kiln.js"
 import { toSellOrNotToSell } from "./PotteryCatalog.js"
+import { PotteryList } from "./PotteryList.js";
 // Make 5 pieces of pottery at the wheel
 let mug = makePottery("mug", 2, 4);
 let plate = makePottery("plate", 6, 1);
@@ -17,19 +18,12 @@ let platterFired = firePottery(platter, 2400);
 let vaseFired = firePottery(vase, 2000);
 
 // Determine which ones should be sold, and their price
-const sellableMug = toSellOrNotToSell(mugFired);
-console.log("mug:", sellableMug);
-
-const sellablePlate = toSellOrNotToSell(plateFired);
-console.log("plate:", sellablePlate);
-
-const sellableCup = toSellOrNotToSell(cupFired);
-console.log("cup:", sellableCup);
-
-const sellablePlatter = toSellOrNotToSell(platterFired);
-console.log("platter:", sellablePlatter);
-
-const sellableVase = toSellOrNotToSell(vaseFired);
-console.log("vase:", sellableVase);
+toSellOrNotToSell(mugFired);
+toSellOrNotToSell(plateFired);
+toSellOrNotToSell(cupFired);
+toSellOrNotToSell(platterFired);
+toSellOrNotToSell(vaseFired);
 
 // Invoke the component function that renders the HTML list
+const potteryListHTML = PotteryList();
+document.querySelector(".potteryList").innerHTML = potteryListHTML;
